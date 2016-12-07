@@ -49,6 +49,8 @@ Create a makeCall function that when invoked logs 'Calling Jake at 435-215-9248'
 in your console. */
 
   //Code Here
+  var makeCall = callFriend()
+  makeCall(435-215-9248);
 
 
 
