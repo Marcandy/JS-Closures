@@ -70,6 +70,14 @@ in your console. */
 properly. */
 
 //Code Here
+function makeCounter() {
+  var count = 0;
+
+  return function() {
+    count++;
+    return count;
+  }
+}
 
 //Uncomment this once you make your function
 //   var count = makeCounter();
