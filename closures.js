@@ -248,9 +248,9 @@ var funcArray = [];
 
 function setArr(num) {
   var nArr = [];
-  function scope(i) {
+  function scope(ind) {
     return function () {
-      return i;
+      return ind;
     }
   }
   for (var i = 0; i <= num; i++) {
