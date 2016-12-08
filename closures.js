@@ -222,10 +222,10 @@ then 3, etc). Run this code in your console to see what the output is. */
 // To make this code work you will need to create a new scope for every iteration.
 function timeOutCounter() {
   for (var i = 0; i <= 5; i++) {
-    setTimeout(newScope(i), i * 1000)
+    setTimeout(newScope(i), i * 1000); // setTimeout is invoking new scope each second
   }
 
-  function newScope(i) {
+  function newScope(i) { // new scope is being made accessing the i variable each time from the parent
     return function(){
       console.log(i);
     }
@@ -245,6 +245,21 @@ timeOutCounter();
 \******************************************************************************/
 
 var funcArray = [];
+
+function setArr(num) {
+  var nArr = [];
+  function scope(i) {
+    return function () {
+      return i;
+    }
+  }
+  for (var i = 0; i <= num; i++) {
+    nArr.push(scope(i))
+  }
+  return nArr;
+}
+
+funcArray = setArr(5);
 
 /*
   Make the following code work
