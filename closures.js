@@ -247,16 +247,16 @@ timeOutCounter();
 var funcArray = [];
 
 function setArr(num) {
-  var nArr = [];
-  function scope(ind) {
+  var nArr = []; //first we create an array that we will return as the output
+  function scope(ind) {//create a closure which will keep of index as it is passed from parent
     return function () {
-      return ind;
+      return ind; // the colure return index when called
     }
   }
-  for (var i = 0; i <= num; i++) {
-    nArr.push(scope(i))
+  for (var i = 0; i <= num; i++) { //we loop through based on the num paramerter passed
+    nArr.push(scope(i)); //we push the closure each time with the i as we are looping
   }
-  return nArr;
+  return nArr; // return an array which contains function that return an  index relative to each position 
 }
 
 funcArray = setArr(5);
